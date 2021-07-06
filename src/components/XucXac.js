@@ -1,21 +1,33 @@
 import React, { Component } from "react";
 
-export default class XucXac extends Component {
+import { connect } from "react-redux";
+
+class XucXac extends Component {
+  renderXucXac = () => {
+    // Lấy props từ reducer về
+    return this.props.mangXucXac.map((xucXac, index) => {
+      return (
+        <img
+          key={index}
+          style={{ width: 50, height: 50, marginRight: 10 }}
+          src={xucXac.hinhAnh}
+          alt={xucXac.ma}
+        />
+      );
+    });
+  };
+
   render() {
-    return (
-      <div>
-        <img
-          style={{ width: 50, height: 50, marginRight: 10 }}
-          src="./images/1.png"
-          alt="1"
-        />
-        <img
-          style={{ width: 50, height: 50, marginRight: 10 }}
-          src="./images/1.png"
-          alt="2"
-        />
-        <img style={{ width: 50, height: 50 }} src="./images/1.png" alt="3" />
-      </div>
-    );
+    return <div>{this.renderXucXac()}</div>;
   }
 }
+
+// Hàm lấy state từ redux về thành props của component
+
+const mapStateToProps = (state) => {
+  return {
+    mangXucXac: state.GameXucXacReducer.mangXucXac,
+  };
+};
+
+export default connect(mapStateToProps)(XucXac);
