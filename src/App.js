@@ -1,6 +1,6 @@
 import "./App.css";
 
-import BaiTapGameXucXac from "./BaiTapRedux/BaiTapGameXucXac";
+import BaiTapGameXucXac from "./components/GameXucXac";
 import React from "react";
 
 function App() {
