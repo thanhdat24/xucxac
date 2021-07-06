@@ -20,7 +20,7 @@ class InfoGame extends Component {
           Tổng số bàn chơi:{" "}
           <span className="text-primary">{this.props.tongLanChoi}</span>
         </div>
-        <button className="info__button">Play game</button>
+       
       </div>
     );
   }

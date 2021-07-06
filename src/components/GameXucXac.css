@@ -37,4 +37,5 @@
   font-size: 1.3rem;
   border: 1px solid #25a94d;
   border-radius: 5px;
+  transform: translateY(-50%);
 }

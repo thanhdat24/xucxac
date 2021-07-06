@@ -38,6 +38,14 @@ class GameXucXac extends Component {
         </div>
         <div className="infoGame text-center">
           <InFoGame />
+          <button
+            onClick={() => {
+              this.props.playGame();
+            }}
+            className="info__button"
+          >
+            Play game
+          </button>
         </div>
       </div>
     );
@@ -52,6 +60,12 @@ const mapDispatchToProps = (dispatch) => {
         taiXiu,
       };
       dispatch(action);
+    },
+
+    playGame: () => {
+      dispatch({
+        type: "PLAY_GAME",
+      });
     },
   };
 };
